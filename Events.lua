@@ -226,8 +226,6 @@ end
 
 local Parents = {};
 
-local DrawingAPI;
-
 DrawingAPI = hookfunction(Drawing.new, newcclosure(function(Class)
     return(function()
         local NewDrawing = DrawingAPI(Class);
