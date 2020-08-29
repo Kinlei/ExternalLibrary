@@ -1,4 +1,4 @@
-local UI = loadstring(game:HttpGet'https://raw.githubusercontent.com/flareo/external-UI-Library/master/Source.lua')() -- Requests API
+local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/ExternalLibrary/master/Module.lua"))() -- Requests API
 
 local Tab = UI.createCategory('Tab Name') -- Creates tab/category
 
