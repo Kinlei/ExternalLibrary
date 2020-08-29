@@ -14,7 +14,6 @@ UI.playerMouse = game:GetService'Players'.LocalPlayer:GetMouse();
 local mouseDot = Drawing.new'Square';
 mouseDot.Size = Vector2.new(1, 1);
 mouseDot.Filled = true;
-mouseDot.ZIndex = 15;
 mouseDot.Color = Color3.new(1, 1, 1);
 mouseDot.Visible = true;
 
@@ -75,7 +74,6 @@ UI.createCategory = function(Name)
 		Base.Color = Color3.fromRGB(30, 32, 33);
 		Base.Visible = true;
 		Base.Filled = true;
-		Base.ZIndex = 1;
 
 		UI.buttonOffset[topHolder] = UI.buttonOffset[topHolder] + UI.buttonSize;
 
@@ -159,7 +157,6 @@ UI.createCategory = function(Name)
 	Category.addToggle = function(self, Name, Callback)
 		local Base, Offset = newBase();
 		local Text = newRelative(Base, Vector2.new(4, 4), 'Text', nil, Name);
-		Text.ZIndex = 3;
 
 		local toggleHolder = newRelative(Base, Vector2.new(UI.buttonXSize - 21.5, 2.5), 'Square', Vector2.new(20, 20));
 		toggleHolder.Color = Color3.fromRGB(24, 24, 24);
@@ -193,7 +190,6 @@ UI.createCategory = function(Name)
 		local sliderLine = newRelative(Base, Vector2.new(77, 1), 'Square', Vector2.new(2, 18));
 
 		sliderLine.Color = Color3.fromRGB(80, 80, 80);
-		sliderLine.ZIndex = 5;
 		sliderBase.Color = Color3.fromRGB(24, 24, 24);
 		sliderLine.Parent = sliderBase;
 
@@ -205,7 +201,6 @@ UI.createCategory = function(Name)
 		};
 		local function offsetText()
 			nameText.relativePosition = Vector2.new((UI.buttonXSize / 2) - (nameText.TextBounds.X / 2), 4);
-			nameText.ZIndex = 3;
 		end;
 		offsetText();
 
@@ -241,7 +236,6 @@ UI.createCategory = function(Name)
 		local nameText = newRelative(Base, Vector2.new(4, 4), 'Text', nil, Name);
 		local buttonBase = newRelative(Base, Vector2.new(4, 2), 'Square', Vector2.new(154, 20));
 		nameText.relativePosition = Vector2.new((UI.buttonXSize / 2) - (nameText.TextBounds.X / 2), 4);
-		nameText.ZIndex = 3;
 
 		buttonBase.MouseButton1Click:Connect(function()
 			if Callback then
