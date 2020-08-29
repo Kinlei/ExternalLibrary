@@ -11,7 +11,7 @@ UI.buttonOffset = {};
 
 UI.playerMouse = game:GetService'Players'.LocalPlayer:GetMouse();
 
-local mouseDot = Drawing.new'Square';
+local mouseDot = External.new'Square';
 mouseDot.Size = Vector2.new(1, 1);
 mouseDot.Filled = true;
 mouseDot.Color = Color3.new(1, 1, 1);
@@ -42,7 +42,7 @@ end;
 local tweenService = game:GetService'TweenService';
 local runService = game:GetService'RunService';
 UI.createCategory = function(Name)
-	local topHolder = Drawing.new'Square';
+	local topHolder = External.new'Square';
 	local localizedOffset = UI.categoryOffset;
 
 	topHolder.Visible = true;
@@ -53,7 +53,7 @@ UI.createCategory = function(Name)
 
 	UI.buttonOffset[topHolder] = 28;
 
-	local holderDecor = Drawing.new'Line';
+	local holderDecor = External.new'Line';
 	local fromYOffset = UI.yOffset + UI.buttonSize - 1;
 
 	holderDecor.Visible = true;
@@ -67,7 +67,7 @@ UI.createCategory = function(Name)
 	local Category = {};
 
 	local function newBase()	
-		local Base = Drawing.new'Square';
+		local Base = External.new'Square';
 		Base.Size = Vector2.new(UI.buttonXSize, UI.buttonSize);
 		Base.Parent = topHolder;
 		Base.relativePosition = Vector2.new(0, UI.buttonOffset[topHolder]);
@@ -80,7 +80,7 @@ UI.createCategory = function(Name)
 		return Base, Base.Position;
 	end;
 	local function newRelative(Base, relativePosition, Type, Size, Text)
-		local Relative = Drawing.new(Type);
+		local Relative = External.new(Type);
 		Relative.relativePosition = relativePosition;
 		Relative.Parent = Base;
 
