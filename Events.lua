@@ -775,5 +775,5 @@ DrawingAPI = hookfunction(Drawing.new, newcclosure(function(Class)
             end
         end
         return NewDrawing;
-    end)
+    end)();
 end))
